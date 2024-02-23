@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<link rel="stylesheet" href="cal.css">
+<body>
+    <div class="main">
+        <input type="text" class="txt" id="txt" readonly>
+        <div class="numbers">
+            <button onclick="appendToDisplay('1')" class="grey-c">1</button>
+            <button onclick="appendToDisplay('2')"class="grey-c">2</button>
+            <button onclick="appendToDisplay('3')"class="grey-c">3</button>
+            <button onclick="appendToDisplay('4')" class="yellow">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')"class="yellow">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('-')" class="yellow">-</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="cal()">=</button>
+            <button onclick="clear()" class="yellow" id="yellow">C</button>
+        </div>
+        
+    </div>    
+</body>
+<script>
+    let display = document.getElementById("txt");
+    
+    function appendToDisplay(input){
+        display.value += input;
+    }
+    function clear(){
+       display.value="";
+       
+    }
+    function cal(){
+        display.value=eval(display.value);
+    }
+</script>
+</html>
